@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--iTodo-->
+        <!--Items-->
         <scene sceneID="tfw-B3-XKl">
             <objects>
                 <tableViewController id="aiZ-QL-0CE" customClass="TodoListViewController" customModule="iTodo" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                             <outlet property="delegate" destination="aiZ-QL-0CE" id="nMu-tz-Uep"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="iTodo" id="uzA-4v-Pr1">
+                    <navigationItem key="navigationItem" title="Items" id="uzA-4v-Pr1">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="41M-lf-fxX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -51,7 +51,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLX-pp-uk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="810" y="146"/>
+            <point key="canvasLocation" x="1028" y="144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w0C-tu-hmS">
@@ -68,12 +68,51 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="aiZ-QL-0CE" kind="relationship" relationship="rootViewController" id="AuD-tz-T7C"/>
+                        <segue destination="NZF-Jo-NDi" kind="relationship" relationship="rootViewController" id="i8U-35-jwb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPt-n3-UhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148" y="146.17691154422789"/>
+            <point key="canvasLocation" x="-535" y="145"/>
+        </scene>
+        <!--iTodo-->
+        <scene sceneID="S20-2q-WGO">
+            <objects>
+                <tableViewController id="NZF-Jo-NDi" customClass="CategoryViewController" customModule="iTodo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4f2-QY-xgi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="VSV-6q-7nv">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VSV-6q-7nv" id="Fuq-aH-8sM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NZF-Jo-NDi" id="43N-Nb-pkH"/>
+                            <outlet property="delegate" destination="NZF-Jo-NDi" id="YCW-3H-30u"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="iTodo" id="9bP-Ed-9al">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Rzv-kv-yTk">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="NZF-Jo-NDi" id="d34-ir-yXS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="aiZ-QL-0CE" kind="show" identifier="goToItems" id="ePT-7R-uuX"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KHu-rE-vTz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="238" y="144"/>
         </scene>
     </scenes>
 </document>
